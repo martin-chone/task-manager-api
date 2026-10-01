@@ -13,8 +13,9 @@ builder.Host.UseSerilog((context, config) =>
 
 //Mapping profiles
 builder.Services.AddAutoMapper(
-    typeof(ApplicationMappingProfile).Assembly,
-    typeof(InfrastructureMappingProfile).Assembly);
+    cfg => { },
+    typeof(ApplicationMappingProfile),
+    typeof(InfrastructureMappingProfile));
 
 //Composition
 builder.Services.AddTaskManagerServices(builder.Configuration);
